@@ -53,11 +53,21 @@ header {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 800;
   font-size: 1.1rem;
   color: var(--terracotta-dark);
   text-decoration: none;
   letter-spacing: 0.02em;
+}
+
+.logo-img {
+  height: 38px;
+  width: 38px;
+  object-fit: contain;
+  border-radius: 6px;
 }
 
 .nav-links {
@@ -220,6 +230,70 @@ h2 {
   color: #4a4038;
 }
 
+/* Objectives */
+.objectives-list {
+  margin-top: 36px;
+  display: grid;
+  gap: 14px;
+  list-style: none;
+  counter-reset: objective;
+}
+
+.objectives-list li {
+  counter-increment: objective;
+  background: #fff;
+  border-left: 4px solid var(--terracotta);
+  border-radius: 8px;
+  padding: 16px 20px 16px 52px;
+  font-size: 0.95rem;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.objectives-list li::before {
+  content: counter(objective);
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  color: var(--terracotta-dark);
+  font-weight: 800;
+}
+
+/* Quote block */
+.quote-block {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 40px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.quote-block img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.quote-block blockquote {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--ink);
+}
+
+.quote-block cite {
+  display: block;
+  margin-top: 10px;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--terracotta-dark);
+}
+
 /* Services */
 .services {
   background: #fff;
@@ -361,5 +435,9 @@ footer .slogan {
   }
   .contact-grid {
     gap: 28px;
+  }
+  .quote-block {
+    flex-direction: column;
+    text-align: center;
   }
 }
