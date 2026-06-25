@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Gallery | Centre For Special Abilities (CeSA)</title>
+<meta name="description" content="Photos from daily life at Centre For Special Abilities (CeSA), a special needs centre in Nansana, Uganda.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="index.html#top" class="logo"><img src="images/logo.png" alt="CeSA logo" class="logo-img"><span class="logo-full">CeSA — Centre For Special Abilities</span><span class="logo-short">CeSA</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#services">Programs</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav-social">
+        <a class="social-icon" href="https://www.facebook.com/61562365375146/" target="_blank" rel="noopener" aria-label="CeSA on Facebook">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1877F2"/><text x="12" y="17" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#fff">f</text></svg>
+        </a>
+        <a class="social-icon" href="https://www.instagram.com/cesachildren/" target="_blank" rel="noopener" aria-label="CeSA on Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#E1306C"/><rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="17" cy="7" r="1" fill="#fff"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section id="full-gallery">
+  <div class="wrap">
+    <a href="index.html#gallery" class="back-link">← Back to homepage</a>
+    <div class="section-head" style="margin-top:0;">
+      <div class="section-tag">A Look Inside CeSA</div>
+      <h2>Our Full Photo Gallery</h2>
+      <p>Photos are grouped by year, newest first — we'll keep adding more as the term goes on.</p>
+    </div>
+
+    <div class="gallery-year-group">
+      <h3 class="gallery-year">2026</h3>
+      <div class="gallery-grid">
+        <img src="images/gallery-1.jpg" alt="Children studying together at a classroom desk at CeSA" onclick="openLightbox(0)">
+        <img src="images/gallery-2.jpg" alt="Students in a CeSA classroom" onclick="openLightbox(1)">
+        <img src="images/gallery-3.jpg" alt="A student writing in his exercise book at CeSA" onclick="openLightbox(2)">
+        <img src="images/gallery-8.jpg" alt="Students writing at their desks in a CeSA classroom" onclick="openLightbox(3)">
+        <img src="images/about.jpg" alt="A student at CeSA working in his exercise book in class" onclick="openLightbox(4)">
+        <img src="images/gallery-6.jpg" alt="A classroom at CeSA with chalkboard and desks" onclick="openLightbox(5)">
+        <img src="images/gallery-4.jpg" alt="CeSA signboard listing services and contact information" onclick="openLightbox(6)">
+        <img src="images/gallery-5.jpg" alt="Children and staff gathered outside the CeSA building" onclick="openLightbox(7)">
+        <img src="images/gallery-7.jpg" alt="A child playing outside at CeSA" onclick="openLightbox(8)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="slogan">"Every child matters."</div>
+  <div><img src="images/logo.png" alt="CeSA logo" class="footer-logo">Centre For Special Abilities (CeSA) — Nansana, Uganda</div>
+  <div class="footer-links">
+    <a class="social-icon" href="https://www.facebook.com/61562365375146/" target="_blank" rel="noopener" aria-label="CeSA on Facebook">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1877F2"/><text x="12" y="17" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#fff">f</text></svg>
+    </a>
+    <a class="social-icon" href="https://www.instagram.com/cesachildren/" target="_blank" rel="noopener" aria-label="CeSA on Instagram">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#E1306C"/><rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="17" cy="7" r="1" fill="#fff"/></svg>
+    </a>
+  </div>
+</footer>
+
+<div class="overlay lightbox" id="lightbox">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <button class="lb-arrow lb-prev" onclick="moveLightbox(-1)">‹</button>
+  <img id="lightbox-img" src="" alt="">
+  <button class="lb-arrow lb-next" onclick="moveLightbox(1)">›</button>
+</div>
+
+<script>
+  const GALLERY_IMAGES = [
+    'images/gallery-1.jpg',
+    'images/gallery-2.jpg',
+    'images/gallery-3.jpg',
+    'images/gallery-8.jpg',
+    'images/about.jpg',
+    'images/gallery-6.jpg',
+    'images/gallery-4.jpg',
+    'images/gallery-5.jpg',
+    'images/gallery-7.jpg'
+  ];
+  let lightboxIndex = 0;
+
+  function openLightbox(i) {
+    lightboxIndex = i;
+    showLightboxImage();
+    document.getElementById('lightbox').classList.add('open');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+
+  function moveLightbox(dir) {
+    lightboxIndex = (lightboxIndex + dir + GALLERY_IMAGES.length) % GALLERY_IMAGES.length;
+    showLightboxImage();
+  }
+
+  function showLightboxImage() {
+    const img = document.getElementById('lightbox-img');
+    img.classList.remove('show');
+    setTimeout(() => {
+      img.src = GALLERY_IMAGES[lightboxIndex];
+      img.classList.add('show');
+    }, 80);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (document.getElementById('lightbox').classList.contains('open')) {
+      if (e.key === 'ArrowRight') moveLightbox(1);
+      if (e.key === 'ArrowLeft') moveLightbox(-1);
+      if (e.key === 'Escape') closeLightbox();
+    }
+  });
+
+  document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target.id === 'lightbox') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
