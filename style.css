@@ -1632,3 +1632,146 @@ footer .slogan {
     gap: 40px;
   }
 }
+
+/* ─── Mobile layout fixes ─── */
+@media (max-width: 800px) {
+  /* Hero: adjust photo position so faces aren't cropped */
+  .hero {
+    background-position: center 40%;
+    padding: 100px 20px 80px;
+  }
+
+  /* Sub-pages hero */
+  .page-hero {
+    padding: 50px 20px 36px;
+  }
+  .page-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  /* Centre Profile: 3-col → 1-col */
+  .profile-facts {
+    grid-template-columns: 1fr;
+  }
+
+  /* Focus grid: 3-col → 2-col */
+  .focus-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Conditions: 2-col → 1-col */
+  .condition-body {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Admission steps: stack vertically, hide arrows */
+  .admission-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  .admission-step {
+    width: 100%;
+    max-width: 340px;
+  }
+  .admission-arrow {
+    transform: rotate(90deg);
+    font-size: 1.1rem;
+  }
+
+  /* Leadership timeline: tighten */
+  .timeline-item {
+    padding-left: 48px;
+  }
+
+  /* Wrap hero buttons to avoid overflow */
+  .hero .btn {
+    display: inline-block;
+    margin: 6px 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Service list: 2-col → 1-col */
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Focus grid: 2-col → 1-col */
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Gallery: keep 2-col on small phones */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  /* Hero text tighter */
+  .hero h1 {
+    font-size: 1.85rem;
+  }
+  .hero p.lead {
+    font-size: 0.95rem;
+  }
+
+  /* Objectives list tighter */
+  .objectives-list {
+    padding-left: 0;
+  }
+  .objectives-list li {
+    padding: 14px 16px 14px 48px;
+  }
+
+  /* Contact items: stack cleanly */
+  .contact-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 4px;
+  }
+  .contact-item {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  /* Hero: smaller padding and font */
+  .hero {
+    padding: 80px 16px 60px;
+    background-position: center 40%;
+  }
+  .hero h1 {
+    font-size: 1.65rem;
+  }
+  .hero .motto {
+    font-size: 0.72rem;
+  }
+  .hero p.lead {
+    font-size: 0.88rem;
+  }
+
+  /* Page hero tighter */
+  .page-hero {
+    padding: 40px 16px 28px;
+  }
+  .page-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  /* Gallery: 1-col on very small screens */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  /* Wrap text cleanly */
+  .support-note {
+    font-size: 0.88rem;
+  }
+  .classes-note {
+    font-size: 0.88rem;
+  }
+}
