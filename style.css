@@ -1635,6 +1635,30 @@ footer .slogan {
 
 /* ─── Mobile layout fixes ─── */
 @media (max-width: 800px) {
+  /* Mobile dropdown: open state via JS toggle */
+  .has-dropdown.open .dropdown-menu {
+    display: block;
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border-radius: 0 0 6px 6px;
+    border-top: none;
+    border-left: 3px solid var(--gold);
+    min-width: auto;
+    padding: 2px 0;
+  }
+
+  /* Principal message: stack photo above text */
+  .leadership-block {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .leadership-photo img {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 800px) {
   /* Hero: adjust photo position so faces aren't cropped */
   .hero {
     background-position: center 40%;
