@@ -343,6 +343,51 @@ header {
   line-height: 1.75;
 }
 
+/* Success stories */
+.story-block {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.story-block:not(:last-child) {
+  margin-bottom: 56px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid #e8ddd0;
+}
+
+.story-avatar {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.story-job-badge {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: var(--cream);
+  border: 1.5px solid var(--gold);
+  color: var(--gold-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.story-meta {
+  font-size: 0.85rem;
+  color: #7a6a5a;
+  margin-top: 10px;
+}
+
 /* Timeline */
 .timeline {
   display: flex;
