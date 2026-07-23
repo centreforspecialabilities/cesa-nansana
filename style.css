@@ -130,6 +130,43 @@ header {
   margin-left: 16px;
 }
 
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  margin-left: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--navy);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
 .btn-donate {
   display: inline-flex;
   align-items: center;
@@ -2019,9 +2056,59 @@ footer .slogan {
 }
 
 @media (max-width: 800px) {
-  /* Mobile dropdown */
+  /* Mobile nav: hamburger-collapsed menu */
+  .nav {
+    position: relative;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #fff;
+    border-top: 1px solid #f0ece2;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    padding: 6px 24px 16px;
+    font-size: 0.95rem;
+    z-index: 50;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links li {
+    width: 100%;
+  }
+  .nav-links a {
+    display: block;
+    padding: 13px 0;
+    border-bottom: 1px solid #f2ece0;
+  }
+  .has-dropdown::after {
+    display: none;
+  }
   .has-dropdown.open .dropdown-menu {
     display: block;
+  }
+  .dropdown-menu {
+    display: none;
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border-top: none;
+    min-width: 0;
+    width: 100%;
+    padding: 0 0 4px 16px;
+  }
+  .dropdown-menu li a {
+    padding: 10px 0;
+    border-bottom: none;
   }
 
   /* Principal page: stack photo above text */
@@ -2037,10 +2124,6 @@ footer .slogan {
     width: 220px;
   }
 
-  .nav-links {
-    gap: 14px;
-    font-size: 0.85rem;
-  }
   .logo-full {
     display: none;
   }
@@ -2110,12 +2193,6 @@ footer .slogan {
   .logo-img {
     height: 30px;
     width: 30px;
-  }
-  .nav-links {
-    gap: 6px 10px;
-    font-size: 0.72rem;
-    flex-wrap: wrap;
-    justify-content: flex-end;
   }
   .btn-donate {
     margin-left: 6px;
@@ -2291,6 +2368,7 @@ footer .slogan {
   }
   .program-photo {
     flex: 0 0 auto;
+    height: auto;
     width: auto;
     max-width: 100%;
     max-height: 320px;
@@ -2304,6 +2382,7 @@ footer .slogan {
   }
   .condition-photo {
     flex: 0 0 auto;
+    height: auto;
     width: auto;
     max-width: 100%;
     max-height: 320px;
@@ -2481,6 +2560,6 @@ footer .slogan {
   .split-photo img { max-height: 260px; }
 }
 @media (max-width: 700px) {
-  .stat-row { grid-template-columns: repeat(2, 1fr); }
+  .stat-row { grid-template-columns: 1fr; }
   .icon-grid { grid-template-columns: 1fr; }
 }
