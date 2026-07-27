@@ -1501,6 +1501,7 @@ h2 {
 
 .program-video {
   position: relative;
+  display: block;
   width: 100%;
   max-width: 480px;
   margin: 20px auto 0;
@@ -1509,19 +1510,39 @@ h2 {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.program-video iframe {
+.program-video img {
   width: 100%;
   aspect-ratio: 16 / 9;
+  object-fit: cover;
   display: block;
-  border: 0;
 }
 
 .program-video.vertical {
   max-width: 260px;
 }
 
-.program-video.vertical iframe {
+.program-video.vertical img {
   aspect-ratio: 9 / 16;
+}
+
+.program-video .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  opacity: 0.9;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.program-video .play-button svg {
+  width: 100%;
+  display: block;
+}
+
+.program-video:hover .play-button {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.08);
 }
 
 /* Conditions page */
