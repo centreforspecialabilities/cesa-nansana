@@ -948,12 +948,8 @@ h2 {
   color: #165bfb;
 }
 
-#ways-to-give .card:nth-of-type(3) {
-  border-top-color: #1d4ed8;
-}
-
-#ways-to-give .card:nth-of-type(3) h3 {
-  color: #1d4ed8;
+#ways-to-give .cards {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 #ways-to-give .btn {
@@ -1501,6 +1497,31 @@ h2 {
 
 .program-card p + p {
   margin-top: 12px;
+}
+
+.program-video {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 20px auto 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.program-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border: 0;
+}
+
+.program-video.vertical {
+  max-width: 260px;
+}
+
+.program-video.vertical iframe {
+  aspect-ratio: 9 / 16;
 }
 
 /* Conditions page */
