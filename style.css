@@ -1484,6 +1484,16 @@ h2 {
   border-radius: 12px;
 }
 
+.program-photo-group {
+  display: flex;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+.program-photo-group .program-photo {
+  margin: 0;
+}
+
 .program-text {
   flex: 1;
   min-width: 0;
@@ -1619,6 +1629,16 @@ h2 {
   max-width: 360px;
   object-fit: contain;
   border-radius: 12px;
+}
+
+.condition-photo-group {
+  display: flex;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+.condition-photo-group .condition-photo {
+  margin: 0;
 }
 
 .condition-header {
@@ -2465,6 +2485,16 @@ footer .slogan {
     max-height: 320px;
     margin: 0 auto;
   }
+  .program-photo-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .program-photo-group .program-photo {
+    height: auto;
+    max-height: 220px;
+    max-width: 47%;
+  }
 
   /* Conditions: photo + text → stacked */
   .condition-row {
@@ -2478,6 +2508,16 @@ footer .slogan {
     max-width: 100%;
     max-height: 320px;
     margin: 0 auto;
+  }
+  .condition-photo-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .condition-photo-group .condition-photo {
+    height: auto;
+    max-height: 220px;
+    max-width: 47%;
   }
 
   /* Admission steps: stack vertically, hide arrows */
@@ -2626,6 +2666,9 @@ footer .slogan {
 .qa-item h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 6px; }
 .qa-item p { margin: 0; }
 .split-photo img { width: 100%; height: 100%; max-height: 360px; object-fit: cover; border-radius: 20px; display: block; }
+
+.split-photo-group { display: flex; gap: 10px; height: 360px; }
+.split-photo-group img { width: calc(50% - 5px); }
 .split-text p { max-width: none; }
 
 /* Decorative floating blobs */
@@ -2649,6 +2692,7 @@ footer .slogan {
   .split { grid-template-columns: 1fr; }
   .split.reverse .split-photo { order: 0; }
   .split-photo img { max-height: 260px; }
+  .split-photo-group { height: 260px; }
 }
 @media (max-width: 700px) {
   .stat-row { grid-template-columns: 1fr; }
